@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 //Import Routes
 const authRoute = require('./routes/auth');
+const postRoute = require('./routes/post');
 
 dotenv.config();
 
@@ -26,5 +27,6 @@ app.use(express.json());
 
 //Route Middlewares
 app.use('/api/user', authRoute);
+app.use('/api/posts', postRoute);
 
 app.listen(PORT, () => console.log(`server up and running on ${PORT} `));
